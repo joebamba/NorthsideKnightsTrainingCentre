@@ -1,29 +1,57 @@
-body {
-    width: 100%;
+* {
+    /* this is temporary */
+    font-family: sans-serif;
+}
+
+html, body{
     height: 100%;
+}
+
+body {
     display: grid;
     place-items: center;
-    overflow: hidden;
-
-   }
-
-   form {
-    width: 494px;
-    border-radius: 40px;
-    background: rgba(31, 78, 162, 0.9);
-    border-radius: 40px;
-   }
-
-   label {
-       text-decoration-color: white;
-   }
-
-   .bg {
-    background-image: url("/images/blurry.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
+    margin: 0;
+    background: url("images/login-background.jpg") no-repeat center;
     background-size: cover;
-    height: 100%;
+}
+
+form {
+    border-radius: 40px;
+    background: rgba(31, 78, 162, 0.8);
+    display: grid;
+    place-items: center;
+    padding: 3em;
+}
+
+label, #login{
+    color: white;
+    margin-top: 0.8em;
+    margin-bottom: 0.1em;
+}
+
+input, label {
+    display: block;
+    border-radius: 0.3em;
+    border: none;
+}
+
+#login {
+    background-color: #109547;
+    font-size: 1.6em;
+    padding: 0.5em 1.2em;
+}
+
+#loginInputs > input {
+    padding: 0.3em 0.3em;
+    width: 97%;
+}
+
+#loginInputs > *, #loginInputs{
     width: 100%;
-    object-fit: fill;
-   }
+    font-size: 1.2em;
+    outline: none;
+}
+
+#loginLogo {
+    width: 85%;
+}

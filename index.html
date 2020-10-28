@@ -3,28 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Login | Northside Knights Traning Centre</title>
     <link rel="stylesheet" href="index.css">
+    <!-- I dont think this is needed
     <script>
         function Login() {
             var username = username.value
             var password = password.value
         }
-    </script>
+    </script> -->
 </head>
 
 <body>
 
-    <form>
-        <img src="\images\logo2-.png" alt="Northside Knights Training Logo.">
-        <label>Username:</label><br>
-        <input type="text" id="username"><br>
-        <label>Password:</label><br>
-        <input type="text" id="password"><br>
-        <input type="submit" value="" onclick="Login()" id="logInBtn">
+    <!-- https://www.w3schools.com/tags/att_input_type_submit.asp -->
+    <form action="PHP_FILE_GOES_HERE">
+        <img src="images/logo.png" alt="Northside Knights Training Logo." id="loginLogo">
+        <div id="loginInputs">
+            <label>Username:</label>
+            <input type="text" id="username">
+
+            <label>Password:</label>
+            <input type="password" id="password">
+        </div>
+        <input type="submit" value="Login" id="login">
     </form>
 
 </body>
-
 
 </html>
