@@ -1,0 +1,29 @@
+body {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+
+   }
+
+   form {
+    width: 494px;
+    border-radius: 40px;
+    background: rgba(31, 78, 162, 0.9);
+    border-radius: 40px;
+   }
+
+   label {
+       text-decoration-color: white;
+   }
+
+   .bg {
+    background-image: url("/images/blurry.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+   }
