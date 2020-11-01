@@ -16,17 +16,16 @@
 
 <body>
 
-    <!-- https://www.w3schools.com/tags/att_input_type_submit.asp -->
-    <form action="PHP_FILE_GOES_HERE">
+    <form action="login.php" method="POST">
         <img src="images/logo.png" alt="Northside Knights Training Logo." id="loginLogo">
         <div id="loginInputs">
             <label>Username:</label>
-            <input type="text" id="username">
+            <input type="text" name="username">
 
             <label>Password:</label>
-            <input type="password" id="password">
+            <input type="password" name="password">
         </div>
-        <input type="submit" value="Login" id="login">
+        <input type="submit" value="Login" name="login" id="login">
     </form>
 
 </body>
