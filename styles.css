@@ -1,0 +1,54 @@
+* {
+    /* this is temporary */
+    font-family: sans-serif;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+aside {
+    background-color: #2B559F;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+section:nth-of-type(1) {
+    grid-area: activity;
+}
+section:nth-of-type(2) {
+    grid-area: schedual;
+}
+section:nth-of-type(3) {
+    grid-area: video;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+    "activity schedual"
+    "activity video";
+}
+
+nav {
+    background-color: #109547;
+    /* display: flex; */
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+

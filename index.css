@@ -1,16 +1,6 @@
-* {
-    /* this is temporary */
-    font-family: sans-serif;
-}
-
-html, body{
-    height: 100%;
-}
-
 body {
     display: grid;
     place-items: center;
-    margin: 0;
     background: url("images/login-background.jpg") no-repeat center;
     background-size: cover;
 }
@@ -55,3 +45,4 @@ input, label {
 #loginLogo {
     width: 85%;
 }
+
