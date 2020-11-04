@@ -49,3 +49,18 @@ create table videos(
     primary key(videoID),
     foreign key(teamID) references teams(teamID)
 );
+
+
+-- This inserts some demo values for the tables
+insert into users (userID, username, password, privileged, firstName, lastName) values
+(0, 'joe.mama', 'bruhCraft', false, 'Joe', 'Mama'),
+(1, 'mr.teacher', 'imAteacher', true, 'Mr', 'Teacher');
+
+insert into teams (teamID, teamName) values
+(0, 'Gym Class');
+
+insert into teamMembers (userID, teamID) values
+(0, 0);
+
+insert into videos (videoID, videoURL, teamID) values 
+(0, "https://www.youtube.com/embed/0Cp1VGTwXJ8", 0);
