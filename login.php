@@ -1,16 +1,24 @@
+<html><h1>
 <?php
     require 'db.php';
+    session_start();
 
     $username = $_POST["username"];
     $password = $_POST["password"];
-    echo "Hello " . $username . "<br>";
-    echo "Password: " . $password . "<br>";
 
-    $user = $mysqli->query("SELECT password FROM users WHERE username='$username'")->fetch_assoc();
+    $user = $mysqli->query("SELECT userID, password, privileged FROM users WHERE username='$username'")->fetch_assoc();
 
     if ($user['password'] == $password) {
-        echo "Pog lets go";
+        $_SESSION["userID"] = $user["userID"];
+        if ($user['privileged'] == 0) {
+            header('Location: dashboard.html');
+        } else {
+            echo "woah you're special";
+        }
+        
     } else {
-        echo "cringe";
+        header('Location: index.html');
     }
-?>
+?></h1>
+
+</html>
