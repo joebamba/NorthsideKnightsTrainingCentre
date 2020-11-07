@@ -1,6 +1,7 @@
 -- This code creates the tables
 create table users(
-    userID integer unsigned not null,
+    -- AUTO_INCREMENT means that it just automatically adds 1 to the last one
+    userID integer unsigned AUTO_INCREMENT not null,
     username text not null,
     password text not null,
     privileged boolean not null,
@@ -10,7 +11,7 @@ create table users(
 );
 
 create table teams(
-    teamID integer unsigned not null,
+    teamID integer unsigned AUTO_INCREMENT not null,
     teamName text not null,
     primary key(teamID)
 );
@@ -43,7 +44,7 @@ create table activities(
 );
 
 create table videos(
-    videoID integer unsigned not null,
+    videoID integer unsigned AUTO_INCREMENT not null,
     videoURL text not null,
     teamID integer unsigned not null,
     primary key(videoID),
@@ -52,15 +53,28 @@ create table videos(
 
 
 -- This inserts some demo values for the tables
-insert into users (userID, username, password, privileged, firstName, lastName) values
-(0, 'joe.mama', 'bruhCraft', false, 'Joe', 'Mama'),
-(1, 'mr.teacher', 'imAteacher', true, 'Mr', 'Teacher');
+insert into users (username, password, privileged, firstName, lastName) values
+('joe.mama', 'bruhCraft', false, 'Joe', 'Mama'),
+('mr.teacher', 'imAteacher', true, 'Mr', 'Teacher'),
+('kai.kurosawa', 'password', false, 'Kai', 'Kurosawa'),
+('sporty.boy', 'zoom', false, 'Sporty', 'Boy');
 
-insert into teams (teamID, teamName) values
-(0, 'Gym Class');
+insert into teams (teamName) values
+('Gym Class'),
+('Bos Touch');
 
 insert into teamMembers (userID, teamID) values
-(0, 0);
+(1, 1),
+(3, 1),
+(4, 2);
 
-insert into videos (videoID, videoURL, teamID) values 
-(0, "https://www.youtube.com/embed/0Cp1VGTwXJ8", 0);
+insert into videos (videoURL, teamID) values 
+("https://www.youtube.com/embed/0Cp1VGTwXJ8", 1),
+("https://www.youtube.com/embed/HV2R5Txs5B4", 1),
+("https://www.youtube.com/embed/BeXABt5yEjo", 2);
+
+
+-- Video query
+SELECT videoURL FROM videos WHERE teamID in (
+    SELECT teamID FROM teamMembers WHERE userID = '$userID'
+) ORDER BY videoID DESC
