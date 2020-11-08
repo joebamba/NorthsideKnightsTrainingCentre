@@ -134,3 +134,11 @@ footer{
 footer p{
     padding-left: 5em;
 }
+
+
+/* 404 */
+#error {
+    display: grid;
+    place-items: center;
+    height: 62.6%;
+}
