@@ -14,6 +14,20 @@
 <main>
     <section>
         <h2>Activities</h2>
+        <table>
+            <tr>
+                <th>Activity</th>
+                <th>Due Date</th>
+            </tr>
+            <tr>
+                <td>30 Push Ups</td>
+                <td>5:00pm Today</td>
+            </tr>
+            <tr>
+                <td>30 Push Ups</td>
+                <td>5:00pm Today</td>
+            </tr>
+        </table>
     </section>
     <section onload ="displaySchedual()">
         <h2>Schedule</h2>
@@ -33,4 +47,3 @@
 </main>
     
 <?php require 'components/footer.html' ?>
-

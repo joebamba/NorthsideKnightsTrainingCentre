@@ -14,8 +14,9 @@
     <title><?php echo $pageTitle ?> | Northside Knights Training Centre</title>
     <link rel="stylesheet" href="styles.css"><link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
     <script>
-        function notifications(){}
-        
+        function showNotification(){
+        document.getElementById("notificationBtn").classList.toggle("show");
+        }    
     </script>
 </head>
 <body>
@@ -27,12 +28,16 @@
             <li><a class="navLink" href="404.php">Activities</a></li>
             <li><a class="navLink" href="404.php">Videos</a></li>
             <li><a class="navLink" href="404.php">Information</a></li>
-            <li><input type="image" src="images/bellnonotification.png" alt="notifications" height="80" onclick=""></li>
+            <li class="notification">
+                <input type="image" src="images/bellnonotification.png" alt="notifications" height="75" onclick="showNotification()" class="dropBtn">
                 <div class="shownNotifications" id="notificationBtn">
-                    <div>
-                        test 1
-                    </div>
+                    <div>test 1</div>
+                    <div>notification 2</div>
+                    <div>test number 3</div>
+                    <div>notificaton 4</div>
                 </div>
+                
+            </li>  
             <li><button><?php echo $_SESSION["user"]["firstName"] . " " . $_SESSION["user"]["lastName"] ?></button></li>
             <li><a href="index.html"><input type="image" src="images/logout.png" alt="logout" height="55"></a></li>
         </ul>

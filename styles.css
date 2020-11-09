@@ -42,33 +42,36 @@ nav ul {
 .navLink {
     color: white;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.2em;
     padding-bottom: 0.25em;
 }
 
-.navLink:hover{
-    color:#0bff71;
-}
-
-.navLink:active {
+.navLink:hover {
     border-bottom: 3px solid#214FA4;
 }
 
-.shownNotifications{
-    display: none;
-    position: center;
-}
 
-.shownNotifications div{
+.shownNotifications{
     color: black;
     text-decoration: none;
+    position:absolute;
+    display: none;
+    overflow: auto;
+    z-index: 1;
+
 }
 
-#notificationBtn{
+.notification{
     display: inline-block;
     position: relative;
 }
 
+.show{
+    display: block;
+    background-color: white;
+    border-radius: 4%;
+    transition-delay: 1s;
+}
 
 /* Main part */
 section:nth-of-type(1) {
@@ -92,7 +95,7 @@ section {
 
 main {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3fr;
     grid-template-areas: 
     "activity schedual"
     "activity video";
@@ -120,6 +123,25 @@ h2 {
     color: #0c3580;
     margin: 0;
     padding-bottom: 1em;
+}
+
+/* Activities */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: rgb(175, 175, 175) solid 1px;
+}
+
+th {
+    text-align: left;
+    padding-bottom: 0.3em;
+}
+
+td {
+    padding: 0.5em 0;
 }
 
 footer{
