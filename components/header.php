@@ -28,17 +28,17 @@
             <li><a class="navLink" href="404.php">Activities</a></li>
             <li><a class="navLink" href="404.php">Videos</a></li>
             <li><a class="navLink" href="404.php">Information</a></li>
+            <li><button><?php echo $_SESSION["user"]["firstName"] . " " . $_SESSION["user"]["lastName"] ?></button></li>
             <li class="notification">
                 <input type="image" src="images/bellnonotification.png" alt="notifications" height="75" onclick="showNotification()" class="dropBtn">
                 <div class="shownNotifications" id="notificationBtn">
-                    <div>test 1</div>
-                    <div>notification 2</div>
-                    <div>test number 3</div>
-                    <div>notificaton 4</div>
+                    <div id="heading">Notifications</div>
+                    <div>Soccer practice cancelled</div>
+                    <div>Trainer added a new activity</div>
+                    <div>NFL Training changed from 4:30pm to 5pm</div>
                 </div>
                 
-            </li>  
-            <li><button><?php echo $_SESSION["user"]["firstName"] . " " . $_SESSION["user"]["lastName"] ?></button></li>
+            </li>
             <li><a href="index.html"><input type="image" src="images/logout.png" alt="logout" height="55"></a></li>
         </ul>
     </nav>

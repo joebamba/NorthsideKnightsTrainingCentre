@@ -9,6 +9,9 @@
         SELECT teamID FROM teamMembers WHERE userID = $userID
     ) ORDER BY videoID DESC";
     $videoLink = $mysqli->query($videoQuery)->fetch_assoc()["videoURL"];
+
+    // This gets the activity
+    
 ?>
 
 <main>
@@ -19,18 +22,27 @@
                 <th>Activity</th>
                 <th>Due Date</th>
             </tr>
+            <?php
+
+
+            ?>
             <tr>
                 <td>30 Push Ups</td>
                 <td>5:00pm Today</td>
             </tr>
             <tr>
-                <td>30 Push Ups</td>
-                <td>5:00pm Today</td>
+                <td>50 Situps</td>
+                <td>6:00pm Tomorrow</td>
+            </tr>
+            <tr>
+                <td>75 Burpees</td>
+                <td>8:00am Friday</td>
             </tr>
         </table>
     </section>
-    <section onload ="displaySchedual()">
+    <section>
         <h2>Schedule</h2>
+        <img src="images/schedule.PNG" alt ="Schedule">
     </section>
     <section>
         <h2>Latest Video</h2>

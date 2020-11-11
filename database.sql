@@ -39,7 +39,6 @@ create table activities(
     startTime datetime not null,
     endTime datetime not null,
     teamID integer unsigned not null,
-    primary key(activityName),
     foreign key(teamID) references teams(teamID)
 );
 
@@ -73,8 +72,17 @@ insert into videos (videoURL, teamID) values
 ("https://www.youtube.com/embed/HV2R5Txs5B4", 1),
 ("https://www.youtube.com/embed/BeXABt5yEjo", 2);
 
+insert into activities (activityName, startTime, endTime, teamID) values
+('30 Push Ups', '2020-11-11 12:39:01', '2020-11-12 17:00:00', 1),
+('50 Situps', '2020-11-12 14:50:00', '2020-11-13 18:00:00', 1),
+('75 Burpees', '2020-11-11 18:30:00', '2020-11-16 08:00:00', 1),
 
 -- Video query
 SELECT videoURL FROM videos WHERE teamID in (
     SELECT teamID FROM teamMembers WHERE userID = '$userID'
 ) ORDER BY videoID DESC
+
+-- Activity query
+SELECT * FROM activities WHERE teamID in (
+    SELECT teamID FROM teamMembers WHERE userID = '$userID'
+)
