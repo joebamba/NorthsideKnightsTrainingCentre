@@ -6,6 +6,15 @@
     if (!isset($_SESSION["user"])) {
         header('Location: index.html');
     }
+
+    $userID = $_SESSION["user"]["userID"];
+
+    // This gets the notifications
+    $notificationQuery = 
+    "SELECT * FROM notifications WHERE teamID in (
+        SELECT teamID FROM teamMembers WHERE userID = $userID
+    )";
+    $notificationArray = $mysqli -> query($notificationQuery);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,9 +42,11 @@
                 <input type="image" src="images/bellnonotification.png" alt="notifications" height="75" onclick="showNotification()" class="dropBtn">
                 <div class="shownNotifications" id="notificationBtn">
                     <div id="heading">Notifications</div>
-                    <div>Soccer practice cancelled</div>
-                    <div>Trainer added a new activity</div>
-                    <div>NFL Training changed from 4:30pm to 5pm</div>
+                    <?php
+                        while ($row = $notificationArray->fetch_array()) {
+                            echo "<div>" . $row["notification"] . "</div>";
+                        }
+                    ?>
                 </div>
                 
             </li>

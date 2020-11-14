@@ -50,6 +50,14 @@ nav ul {
     border-bottom: 3px solid#214FA4;
 }
 
+li > button {
+    font-size: 1em;
+    background-color: #214FA4;
+    border: none;
+    color: white;
+    padding: 0.7em;
+    border-radius: 0.6em;
+}
 
 .shownNotifications{
     text-decoration: none;
@@ -87,8 +95,6 @@ nav ul {
     padding: 1em;
     right: 0;
     border: black solid 1px;
-
-
 }
 
 

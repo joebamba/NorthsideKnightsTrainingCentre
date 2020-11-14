@@ -11,7 +11,14 @@
     $videoLink = $mysqli->query($videoQuery)->fetch_assoc()["videoURL"];
 
     // This gets the activity
-    
+    $activityQuery = 
+    "SELECT * FROM activities WHERE teamID in (
+        SELECT teamID FROM teamMembers WHERE userID = $userID
+    )";
+    $activitiesArray = $mysqli -> query($activityQuery);
+
+    // this is here so that formatting that date works
+    date_default_timezone_set('Australia/Brisbane'); 
 ?>
 
 <main>
@@ -23,25 +30,18 @@
                 <th>Due Date</th>
             </tr>
             <?php
-
-
+                while ($row = $activitiesArray->fetch_array()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["activityName"] . "</td>";
+                    echo "<td>" . date_format(date_create($row["endTime"]), "h:ia d/m") . "</td>";
+                    echo "</tr>";
+                }
             ?>
-            <tr>
-                <td>30 Push Ups</td>
-                <td>5:00pm Today</td>
-            </tr>
-            <tr>
-                <td>50 Situps</td>
-                <td>6:00pm Tomorrow</td>
-            </tr>
-            <tr>
-                <td>75 Burpees</td>
-                <td>8:00am Friday</td>
-            </tr>
         </table>
     </section>
     <section>
         <h2>Schedule</h2>
+        <!-- This isn't actually functional; it's just a placeholder -->
         <img src="images/schedule.PNG" alt ="Schedule">
     </section>
     <section>

@@ -17,9 +17,9 @@ create table teams(
 );
 
 create table notifications(
-    notificationID integer unsigned not null,
+    notificationID integer unsigned AUTO_INCREMENT not null,
     notification text not null,
-    timestamp date not null,
+    timestamp date,
     userID integer unsigned,
     teamID integer unsigned,
     primary key(notificationID),
@@ -76,13 +76,26 @@ insert into activities (activityName, startTime, endTime, teamID) values
 ('30 Push Ups', '2020-11-11 12:39:01', '2020-11-12 17:00:00', 1),
 ('50 Situps', '2020-11-12 14:50:00', '2020-11-13 18:00:00', 1),
 ('75 Burpees', '2020-11-11 18:30:00', '2020-11-16 08:00:00', 1),
+('70 Push Ups', '2020-11-11 12:39:01', '2020-11-12 17:00:00', 2),
+('100 Situps', '2020-11-12 14:50:00', '2020-11-13 18:00:00', 2);
+
+insert into notifications (notification, teamID) values
+("Soccer practice cancelled", 1),
+("Trainer added a new activity", 1),
+("NFL Training changed from 4:30pm to 5pm", 1);
+
 
 -- Video query
 SELECT videoURL FROM videos WHERE teamID in (
-    SELECT teamID FROM teamMembers WHERE userID = '$userID'
-) ORDER BY videoID DESC
+    SELECT teamID FROM teamMembers WHERE userID = $userID
+) ORDER BY videoID DESC;
 
 -- Activity query
 SELECT * FROM activities WHERE teamID in (
-    SELECT teamID FROM teamMembers WHERE userID = '$userID'
+    SELECT teamID FROM teamMembers WHERE userID = $userID
+);
+
+-- Notification query
+SELECT * FROM notifications WHERE teamID in (
+    SELECT teamID FROM teamMembers WHERE userID = $userID
 )
