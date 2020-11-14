@@ -3,7 +3,6 @@
     require 'components/header.php';
 
     // This gets the latest video
-    $userID = $_SESSION["user"]["userID"];
     $videoQuery = 
     "SELECT videoURL FROM videos WHERE teamID in (
         SELECT teamID FROM teamMembers WHERE userID = $userID
@@ -17,7 +16,7 @@
     )";
     $activitiesArray = $mysqli -> query($activityQuery);
 
-    // this is here so that formatting that date works
+    // this is here so that formatting the date works
     date_default_timezone_set('Australia/Brisbane'); 
 ?>
 

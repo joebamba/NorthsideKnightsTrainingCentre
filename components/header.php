@@ -36,7 +36,7 @@
             <li><a class="navLink" href="404.php">Schedule</a></li>
             <li><a class="navLink" href="404.php">Activities</a></li>
             <li><a class="navLink" href="404.php">Videos</a></li>
-            <li><a class="navLink" href="404.php">Information</a></li>
+            <li><a class="navLink" href="information.php">Information</a></li>
             <li><button><?php echo $_SESSION["user"]["firstName"] . " " . $_SESSION["user"]["lastName"] ?></button></li>
             <li class="notification">
                 <input type="image" src="images/bellnonotification.png" alt="notifications" height="75" onclick="showNotification()" class="dropBtn">

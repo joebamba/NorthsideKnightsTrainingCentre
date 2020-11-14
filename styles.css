@@ -195,3 +195,25 @@ footer p{
     place-items: center;
     height: 62.6%;
 }
+
+
+/* Information */
+#information {
+    text-align: center;
+    height: 62.6%;
+}
+
+#information > div {
+    margin-bottom: 2.5em;
+}
+
+#information h1 {
+    font-size: 1.8em;
+    color: #0c3580;
+    margin-bottom: 2.5em;
+    margin-top: 2em;
+}
+
+#information h3 {
+    margin-bottom: 0;
+}
